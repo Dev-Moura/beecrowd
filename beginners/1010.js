@@ -10,5 +10,9 @@ A saída deverá ser uma mensagem conforme o exemplo fornecido abaixo, lembrando
 
 */
 
+let [code, parts, value] = [];
+let [code2, parts2, value2] = lines[0].split("");
 
+let payment = ((parts * value) + (parts2 * value2));
 
+console.log(`VALOR A PAGAR: R$ ${payment.toFixed(2)}`);
