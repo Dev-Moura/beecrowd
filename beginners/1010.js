@@ -9,10 +9,11 @@ Saída
 A saída deverá ser uma mensagem conforme o exemplo fornecido abaixo, lembrando de deixar um espaço após os dois pontos e um espaço após o "R$". O valor deverá ser apresentado com 2 casas após o ponto.
 
 */
+let values = lines.shift().trim().split(" ");
+let [code, parts, price] = [parseInt(values.shift()), parseInt(values.shift()), parseFloat(values.shift())];
+values = lines.shift().trim().split(" ");
+let [code2, parts2, price2] = [parseInt(values.shift()), parseInt(values.shift()), parseFloat(values.shift())];
 
-let [code, parts, value] = [];
-let [code2, parts2, value2] = lines[0].split("");
+let amounToPay = parts * price + parts2 * price2;
 
-let payment = ((parts * value) + (parts2 * value2));
-
-console.log(`VALOR A PAGAR: R$ ${payment.toFixed(2)}`);
+console.log("VALOR A PAGAR: R$ "+  amounToPay.toFixed(2));
