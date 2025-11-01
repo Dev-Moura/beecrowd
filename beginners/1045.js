@@ -14,29 +14,26 @@ Saída
 Imprima todas as classificações do triângulo especificado na entrada.
 */
 
-let [a,b,c] = lines[0].trim().split(" ").map(Number);
+input.sort((a,b) => b - a);
 
-let values = [a, b, c];
-
-values.sort((a,b) => b - a);
-
-if (a >= b + c) {  
-    console.log("NAO FORMA TRIANGULO");
+if ( a >= b + c ) {  
+    console.log( "NAO FORMA TRIANGULO" );
 } else {
 
-    if ((a**2) === (b**2) + (c**2)) {
-        console.log("TRIANGULO RETANGULO")
+    if ( a * a ===  b * b  +  c * c ) {
+        console.log("TRIANGULO RETANGULO");
     }  
-    
-    else if ((a**2) > (b**2) + (c**2)) {
-        console.log("TRIAGUNLO OBTUSANGULO")
-    } else {
-        console.log("TRIANGULO ACUTANGULO")
+    else if ( a * a  > b * b + c * c ) {
+        console.log("TRIANGULO OBTUSANGULO");
+
+    } else if ( a * a < b * b + c * c ) {
+        console.log("TRIANGULO ACUTANGULO");
     }
 
-    if (a === b && b === c) {
+    if ( a === b && b === c ) {
         console.log("TRIANGULO EQUILATERO");
-    } else if (a === b || b === c || a === c){
-        console.log("TRIANGULO ISOSCELES")
+
+    } else if ( a === b || b === c || a === c ){
+        console.log("TRIANGULO ISOSCELES");
     }
 }
